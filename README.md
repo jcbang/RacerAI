@@ -12,6 +12,8 @@ Method waits for a configurable amount of seconds before activating the AI, util
 Method shuts off the AI by setting its maximum speed to zero and forces the brakes when the AI reaches the finish line.
 protected void SteerCarToAngle(float speedModifier):
 Method controls what direction the wheels turn in based on the target steering angle and current steering angle at a rate controlled by our turn speed set for the car. 
+#### protected void Sensors():
+Method controls the car's spatial awareness. Five raycast sensors exist on our car. Left, Angled Left, Front, Angled Right, and Right. If a sensor is hit on a given side, the avoiding boolean flag is set to true which allows for this method’s avoidMultiplier to take precedence over Drive()’s steering. avoidMultiplier’s value corresponds to a left turn if negative and a right turn if positive.
 #### protected virtual void Steer():
 Method controls the car’s pathfinding towards each node in the race path created in Start().
 If the car is avoiding something, then this method is ignored during the FixedUpdate().
