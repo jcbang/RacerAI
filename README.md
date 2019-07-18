@@ -16,4 +16,5 @@ Method controls what direction the wheels turn in based on the target steering a
 Method controls the car’s pathfinding towards each node in the race path created in Start().
 If the car is avoiding something, then this method is ignored during the FixedUpdate().
 
-### Police Car AI
+### Usage
+AI scripts inherit from the Universal Car AI. By default, the Universal Car AI navigation follows a set path of nodes laid out in the game world. Custom applications may of course get rid of that default navigation though! The sensor suite is the primary method that makes the Universal Car AI important for car logic, as it gives the car collision detection whether or not they're following a path or not and lets the car react to its environment.
